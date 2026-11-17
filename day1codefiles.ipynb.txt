@@ -1,0 +1,59 @@
+Python session 1
+# integers
+x = 1
+type(x)
+
+# float
+x = 1.0
+type(x)
+
+# integers
+x = cat
+type(x)
+
+# boolean
+b1 = True
+b2 = False
+type(b1)
+
+# string
+name1 = 'your name'
+type(name1)
+
+# complex numbers: note the use of `j` to specify the imaginary part
+x = 1.0 - 2.0j
+type(x)
+print(x)
+print(x.real, x.imag)
+tenth = 10
+two = 2
+tenth
+two
+ten = 10
+ten
+ten = 'ten'
+ten
+'Day' + '1'
+i = 3
+if i < 3:
+    print('less than 3')
+elif i < 5:
+    print('less than 5')
+else:
+    print('5 or more')
+l = []
+l
+l = list()
+l
+l = ['a', 'b', 'c']
+l
+l = ['a', 6]
+l
+l2 = list(l)
+l2
+digits = [0, 1, 5]
+
+for i in digits:
+    print(i)
+else:
+    print("No items left.")
