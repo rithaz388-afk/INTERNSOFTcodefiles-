@@ -1,0 +1,314 @@
+Python session 2
+1.Creating a String
+# Single word
+'hello'
+
+# Entire phrase
+'This is also a string'
+
+ 2.Printing a String
+# We can simply declare a string
+'Hello World'
+
+# note that we can't output multiple strings this way
+print('Hello World 1')
+'Hello World 2'
+
+# note that we can't output multiple strings this way
+print('Hello World 1')
+print('Hello World 2')
+
+print('Hello World 1')
+print('Hello World 2')
+print('Use \n to print a new line')
+print('\n')
+print('See what I mean?')
+
+3.String Basics & Indexing
+len('Hello World')
+
+# Assign s as a string
+s = 'Hello World'
+
+#Check
+s
+
+# Print the object
+print(s)
+
+# Show first element (in this case a letter)
+s[0]
+
+s[1]
+
+s[2]
+
+# Grab everything past the first term all the way to the length of s which is len(s)
+s[1:]
+
+# Note that there is no change to the original s
+s
+
+# Grab everything UP TO the 3rd index
+s[:3]
+
+4.Slicing and Step Sizes
+# Grab everything UP TO the 3rd index
+s[:3]
+
+#Everything
+s[:]
+
+# Last letter (one index behind 0 so it loops back around)
+s[-1]
+
+# Grab everything but the last letter
+s[:-1]
+
+# Grab everything, but go in steps size of 1
+s[::1]
+
+# Grab everything, but go in step sizes of 2
+s[::2]
+
+5.String Properties
+s
+
+# Let's try to change the first letter to 'x'
+s[0] = 'x'
+
+s
+
+# Concatenate strings!
+s + ' concatenate me!'
+
+# We can reassign s completely though!
+s = s + ' concatenate me!'
+
+print(s)
+
+s
+
+6.Repetition & Basic Built-in String Methods
+letter = 'z'
+
+letter * 10
+
+s
+
+# Upper Case a string
+s.upper()
+
+# Lower case
+s.lower()
+
+# Split a string by blank space (this is the default)
+s.split()
+
+# Split by a specific element (doesn't include the element that was split on)
+s.split('o')
+
+7.Print Formatting, Location, and Counting
+'Insert another string with curly brackets:{}'.format('The inserted string')
+
+print(s)
+s.count('o')
+
+s.find('o')
+
+s.center(40, 'z')
+
+'hello\thi'.expandtabs()
+
+8.Is Check Methods
+s = 'hello'
+
+s.isalnum()
+
+s.isalpha()
+
+s.islower()
+
+9.Remaining Is Check Methods & Built-in Regular Expressions
+s.isalpha()
+
+s.islower()
+
+s.isspace()
+
+s.istitle()
+
+s.isupper()
+
+s.endswith('o')
+
+s.split('e')
+
+s.partition('e')
+
+s
+
+10.Introduction to Lists
+# Assign a list to an variable named my_list
+my_list = [1, 2, 3]
+
+my_list = ['A string', 23, 100.232, 'o']
+my_list
+
+len(my_list)
+
+my_list = ['one', 'two', 'three', 4, 5]
+
+# Grab everything UP TO index 3
+my_list[:3]
+
+# We can also use '+' to concatenate lists, just like we did for Strings.
+my_list + ['new item']
+
+my_list
+
+# Reassign
+my_list = my_list + ['add new item permanently']
+
+my_list
+
+# We can also use the '*' for a duplication method similar to strings:
+# Make the list double
+my_list * 2
+
+# Again doubling not permanent
+my_list
+
+11.Basic List Methods
+# Create a new list
+l = [1, 2, 3]
+
+# Append
+l.append('append me!')
+
+# Show
+l
+
+# Pop off the 0 indexed item
+l.pop(0)
+
+12.Lists: Indexing, Slicing, and Sorting
+# Pop off the 0 indexed item
+l.pop(0)
+
+# Show
+l
+
+# Assign the popped element, remember default popped index is -1
+popped_item = l.pop()
+
+popped_item
+
+# Show remaining list
+l
+
+# Note that lists indexing will return an error if there is no element at that index. For example:
+l[100]
+
+# We can use the sort method and the reverse methods to also effect your lists:
+new_list = ['a', 'e', 'x', 'b', 'c']
+
+# Show
+new_list
+
+# Use reverse to reverse order (this is permanent!)
+new_list.reverse()
+
+new_list
+
+# use sort to sort the list (in this case alphabetical order, but for numbers too):
+new_list.sort()
+
+new_list
+
+13.Nesting Lists & List Comprehensions
+# Let's make three lists
+lst_1 = [1, 2, 3]
+lst_2 = [4, 5, 6]
+lst_3 = [7, 8, 9]
+
+# Make a list of lists to form a matrix
+matrix = [lst_1, lst_2, lst_3]
+
+# Show
+matrix
+
+# Grab first item in matrix object
+matrix[0]
+
+# Grab first item of the first item in the matrix object
+matrix[0][0]
+
+# Grab first item of the first item in the matrix object
+matrix[1][1]
+
+# Build a list comprehension by deconstructing a for loop within a []
+first_col = [row[0] for row in matrix]
+
+first_col
+
+14.Advanced Lists (Append & Count)
+l = [1, 2, 3]
+
+l.append(4)
+
+l
+
+l.count(10)
+
+l.count(2)
+
+15.Advanced Lists (Extend, Index, Insert, Remove, Reverse, and Sort)
+# append: Appends object at end
+x = [1, 2, 3]
+x.append([4, 5])
+print(x)
+
+# extend: extends list by appending elements from the iterable
+x = [1, 2, 3]
+x.extend([4, 5])
+print(x)
+
+# index
+print(l)
+l.index(2)
+l.index(12)
+
+# insert
+# Two arguments can be placed in insert method.
+# Syntax: insert(index,object)
+# This method places the object at the index supplied. For example:
+l
+# Place a letter at the index 2
+l.insert(2,'inserted')
+l
+
+# pop
+ele = l.pop()
+l
+ele
+
+# remove
+# The remove() method removes the first occurrence of a value. For example:
+l
+l.remove('inserted')
+l
+l = [1,2,3,4,3]
+l.remove(3)
+l
+
+# reverse
+# As the name suggests, reverse() helps you to reverse a list. Note this occurs in place
+l.reverse()
+l
+
+# sort
+# sort will sort your list in place:
+l
+l.sort()
+l

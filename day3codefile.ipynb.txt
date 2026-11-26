@@ -1,0 +1,213 @@
+Python session 3
+t = (1, 2, 3)
+len(t)
+
+t = ('one', 2)
+t
+t[0]
+t[-1]
+
+t.index('one')
+t.count('one')
+
+t[0] = 'change'
+t.append('nope')
+```[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span)
+
+## Sets
+
+```python
+x = set()
+x.add(1)
+x
+
+x.add(2)
+x
+
+x.add(1)
+x
+
+l = [1, 1, 2, 2, 3, 4, 5, 6, 1, 1]
+set(l)
+```[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span)
+
+## Dictionaries
+
+```python
+my_dict = {'key1': 'value1', 'key2': 'value2'}
+my_dict['key2']
+
+my_dict = {'key1': 123, 'key2': [12, 23, 33], 'key3': ['item0', 'item1', 'item2']}
+my_dict['key3']
+my_dict['key3'][0]
+my_dict['key3'][0].upper()
+my_dict['key1']
+
+d = {}
+d['animal'] = 'Dog'
+d['answer'] = 42
+d
+
+d = {'key1': {'nestkey': {'subnestkey': 'value'}}}
+d['key1']['nestkey']['subnestkey']
+
+d = {'key1': 1, 'key2': 2, 'key3': 3}
+d.keys()
+d.values()
+d.items()
+
+print(list(range(10)))
+{x: x**2 for x in range(10)}
+```[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span)[span_16](start_span)[span_16](end_span)
+
+## Functions & `return`
+
+```python
+def name_of_function(arg1, arg2):
+    pass
+
+def say_hello():
+    print('hello')
+
+say_hello()
+
+def greeting(name):
+    print('Hello %s' % name)
+
+greeting('Jose')
+
+def greeting(name):
+    print('Hello %s' % name)
+    print('how are you doing')
+
+greeting('Jose')
+
+def add_num(num1, num2):
+    return num1 + num2
+
+add_num(4, 5)
+result = add_num(4, 5)
+print(result)
+print(add_num('one\t', 'two'))
+```[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span)[span_22](start_span)[span_22](end_span)
+
+## Prime Check
+
+```python
+def is_prime(num):
+    for n in range(2, num):
+        if num % n == 0:
+            print('not prime')
+            break
+    else:
+        print('prime')
+
+is_prime(11)
+
+import math
+
+def is_prime(num):
+    if num % 2 == 0 and num > 2:
+        return False
+    for i in range(3, int(math.sqrt(num)) + 1, 2):
+        if num % i == 0:
+            return False
+    return True
+
+print(list(range(3, 6, 2)))
+is_prime(25)
+is_prime(11)
+```[span_23](start_span)[span_23](end_span)[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span)
+
+## Generators, `iter()`, and `next()`
+
+```python
+def gencubes(n):
+    for num in range(n):
+        yield num**3
+
+for x in gencubes(10):
+    print(x)
+
+def genfibon(n):
+    a = 1
+    b = 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+for num in genfibon(10):
+    print(num)
+
+def fibon(n):
+    a = 1
+    b = 1
+    output = []
+    for i in range(n):
+        output.append(a)
+        a, b = b, a + b
+    return output
+
+fibon(10)
+
+def simple_gen():
+    for x in range(3):
+        yield x
+
+g = simple_gen()
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+
+s = 'hello'
+for let in s:
+    print(let)
+
+next(s)
+s_iter = iter(s)
+next(s_iter)
+next(s_iter)
+```[span_28](start_span)[span_28](end_span)[span_29](start_span)[span_29](end_span)[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span)[span_32](start_span)[span_32](end_span)[span_33](start_span)[span_33](end_span)[span_34](start_span)[span_34](end_span)[span_35](start_span)[span_35](end_span)[span_36](start_span)[span_36](end_span)[span_37](start_span)[span_37](end_span)[span_38](start_span)[span_38](end_span)[span_39](start_span)[span_39](end_span)[span_40](start_span)[span_40](end_span)[span_41](start_span)[span_41](end_span)[span_42](start_span)[span_42](end_span)
+
+## `map()`, `reduce()`, and `filter()`
+
+```python
+def fahrenheit(T):
+    return ((float(9)/5)*T + 32)
+
+def celsius(T):
+    return (float(5)/9)*(T-32)
+
+temp = [0, 22.5, 40, 100]
+
+F_temps = list(map(fahrenheit, temp))
+F_temps
+
+list(map(celsius, F_temps))
+list(map(lambda x: (5.0/9)*(x - 32), F_temps))
+
+a = [1,2,3,4]
+b = [5,6,7,8]
+c = [9,10,11,12]
+
+list(map(lambda x,y:x+y,a,b))
+list(map(lambda x,y,z:x+y+z, a,b,c))
+
+from functools import reduce
+
+lst = [47,11,42,13]
+reduce(lambda x,y: x+y,lst)
+
+max_find = lambda a,b: a if (a > b) else b
+reduce(max_find,lst)
+
+def even_check(num):
+    if num % 2 == 0:
+        return True
+
+lst = range(20)
+print(list(lst))
+
+list(filter(even_check, lst))
+```[span_43](start_span)[span_43](end_span)[span_44](start_span)[span_44](end_span)[span_45](start_span)[span_45](end_span)[span_46](start_span)[span_46](end_span)[span_47](start_span)[span_47](end_span)[span_48](start_span)[span_48](end_span)[span_49](start_span)[span_49](end_span)[span_50](start_span)[span_50](end_span)[span_51](start_span)[span_51](end_span)
